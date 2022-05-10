@@ -12,4 +12,6 @@ def sum(x):
 print(sum(random.randint(1,100)))
 
 
+
+
 #[random.randint(1,100)]
