@@ -3,5 +3,13 @@
 
 import random
 
+def sum(x):
+    if x == 0:
+        return 0
+    else:
+        print(x)
+        return x + sum(x-1)
+print(sum(random.randint(1,100)))
+
 
 #[random.randint(1,100)]
