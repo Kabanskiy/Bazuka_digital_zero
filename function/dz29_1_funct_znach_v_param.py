@@ -5,7 +5,7 @@ def fu1():
     x = 10
     return x
 
-def fu2(x):
+def fu2(x): # принимает предыдущее значение в качестве параметра
     z = x + 5
     return z
 print(fu2(fu1()))
