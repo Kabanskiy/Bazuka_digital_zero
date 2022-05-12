@@ -1,5 +1,5 @@
 # бот с интенсива от Эдварда
-# необходимо внести на сервер
+# необходимо внести на сервер (вид во вкладке)
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
