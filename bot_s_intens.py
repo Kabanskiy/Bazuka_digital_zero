@@ -1,4 +1,4 @@
-# бот с интенсива
+# бот с интенсива от Эдварда
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
