@@ -4,17 +4,17 @@
 # Затем этот элемент нужно проверять, является ли он списком по образцу
 
 # Рекурсивная функция - возвращает сумму чисел, обрабатывает вложенные списки
-def CalcSumNumbers(A):
+def sumnum(a):
     summ = 0
 
     # здесь нужно реализовать обход в цикле
-    for t in A:
+    for t in a:
         # Обрабатывается элемент t
         if not isinstance(t, list): # проверить, есть ли t списком
             summ = summ + t # если t - не список, то прибавить его к сумме
         else:
             # получить сумму из следующих рекурсивных вызовов
-            summ = summ + CalcSumNumbers(t)
+            summ = summ + sumnum(t)
 
     return summ
 
@@ -23,7 +23,7 @@ def CalcSumNumbers(A):
 L = [ -2, 3, 8, 11, [-4, 6, [ 2, [-5, 4] ] ] ]
 
 # 2. Вызвать функцию
-summ = CalcSumNumbers(L)
+summ = sumnum(L)
 
 # 3. Распечатать сумму
 print("summ = ", summ)
