@@ -26,4 +26,3 @@ def dva():
 #     print('Stopuem')
 # decore1(odin)           # и здесь уже как обычно вызываем функцию
 # decore1(dva)
-
