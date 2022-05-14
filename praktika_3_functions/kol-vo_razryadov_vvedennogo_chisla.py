@@ -6,4 +6,4 @@ def skynet(num):
         num = num // 10
         i += 1
     return i
-print(skynet())
+print(skynet(5315))
