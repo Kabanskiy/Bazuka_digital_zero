@@ -10,11 +10,10 @@ def odin():
 @decore1
 def dva():
     print('test2')
-
 # причем отдельно вызов этих функций не требуется
 
 #Либо, если просто:
-
+#
 # def odin():
 #     print('Test1')
 #
@@ -25,6 +24,6 @@ def dva():
 #     print('Startuem')
 #     fn()                # здесь появляется функция, которую вызываем далее
 #     print('Stopuem')
+#
 # decore1(odin)           # и здесь уже как обычно вызываем функцию
 # decore1(dva)
-
