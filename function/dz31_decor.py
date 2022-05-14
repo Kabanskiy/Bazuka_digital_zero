@@ -3,20 +3,16 @@
 def deco(fn):
     global skoko_raz
     skoko_raz += 1
-    print('nachalo')
+    print('Navernoe')
     fn()
-    print('konets')
+    print('kruche')
     print(skoko_raz)
 skoko_raz = 0
 
 @deco
 def test1():
-    print('testim1')
+    print('Chuck Norris')
 
 @deco
 def test2():
-    print('testim2')
-
-@deco
-def test3():
-    print('testim3')
+    print('Jackie Chan')
