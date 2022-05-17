@@ -22,6 +22,6 @@ def print_message(message):
 # print_message(chat_msg_1)
 # print_message(chat_msg_2)
 
-# Пройдем по всем элементам списка
+# Пройдем по всем элементам списка.
 for n in messages_list:
   print_message(n)
