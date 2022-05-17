@@ -1,4 +1,4 @@
-rus_lower = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
+rus_lower = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'.
 for position in range(11):
     print('^' * 27)
     for letter in rus_lower:
