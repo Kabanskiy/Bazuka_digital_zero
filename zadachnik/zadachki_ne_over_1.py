@@ -1,4 +1,4 @@
-letters = 'ЫгВЫоЯСремДШНККАыкЩЙФа'
+letters = 'ЫгВЫоЯСремДШНККАыкЩЙФа'.
 new_str = ''
 for letter in letters:
     if not letter.isupper():
