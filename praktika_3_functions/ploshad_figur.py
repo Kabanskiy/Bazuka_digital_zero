@@ -9,7 +9,7 @@ def pryam(a, b):
     return(a * b)
 def treug(a, b, c):
     pp = (a+b+c)/2 # полупериметр
-    return math.sqrt (pp*(pp-a)*(pp-b)*(pp-c)) # math.sqrt находит корень квадратный выражения. И находится по формуле
+    return math.sqrt (pp*(pp-a)*(pp-b)*(pp-c)) # math.sqrt находит корень квадратный выражения. И находится по мат формуле
 
 figura = input('Выбери фигуру: 1 - круг, 2 - прямоугольник, 3 - треугольник: ')
 
