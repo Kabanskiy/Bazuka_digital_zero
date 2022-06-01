@@ -5,3 +5,13 @@
 
 a = float(input('Введи первое число: '))
 b = float(input('Введи второе число: '))
+c = input('Введи знак */-+: ')
+
+if c == '+':
+    print(a+b)
+elif c == '-':
+    print(a-b)
+elif c == '*':
+    print(a*b)
+else:
+    print(a/b)
