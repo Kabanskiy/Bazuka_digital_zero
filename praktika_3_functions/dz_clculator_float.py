@@ -5,24 +5,30 @@
 
 a = float(input('Введи первое число: '))
 b = float(input('Введи второе число: '))
-c = input('Введи знак */-+: ')
+# c = input('Введи знак */-+: ')
 
-def calc1(a, b):
+def pluse(a, b):
     return a + b
-def calc2(a, b):
+def minuse(a, b):
     return a - b
-def calc3(a, b):
+def proizv(a, b):
     return a * b
-def calc4(a, b):
-    return a / b
-
-if c == '+':
-    print(calc1(a, b))
-elif c == '-':
-    print(calc2(a, b))
-elif c == '*':
-    print(calc3(a, b))
-elif c == '/':
+def delen(a, b):
     if b == 0:
         print('Делить на 0 нельзя')
-    print(calc4(a, b))
+    else:
+        return a / b
+
+while True:
+    x = input('Введи знак +-*/ или 0, чтобы завершить программу: ')
+    if x == '0':
+        break
+    else:
+        if x == '+':
+            print(pluse(a, b))
+        elif x == '-':
+            print(minuse(a, b))
+        elif x == '*':
+            print(proizv(a, b))
+        elif x == '/':
+            print(delen(a, b))
