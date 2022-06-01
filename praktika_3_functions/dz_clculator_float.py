@@ -22,5 +22,7 @@ elif c == '-':
     print(calc2(a, b))
 elif c == '*':
     print(calc3(a, b))
-else:
+elif c == '/':
     print(calc4(a, b))
+    if b == 0:
+        print('Делить на 0 нельзя')
