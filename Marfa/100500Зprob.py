@@ -2,7 +2,7 @@ a = ['sdfsd', 'sdfsdf']
 
 se = 123
 
-sdf = 4234
+dd = 9
 
-if se != sdf:
-    print('sdfds')
+if dd == se:
+    print('sdf')
