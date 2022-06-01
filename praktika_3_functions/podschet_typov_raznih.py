@@ -4,3 +4,12 @@
 # Строка – количество букв.
 # Сделать проверку со всеми этими случаями.
 
+def raz(n):
+    if type(n) == tuple():
+        return len(n)
+    elif type(n) == list():
+        return count(n)
+    elif type(n) == int():
+        return int(n)
+    elif type(n) == str():
+        return count(n)
