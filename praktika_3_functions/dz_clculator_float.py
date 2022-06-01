@@ -9,11 +9,11 @@ c = input('Введи знак */-+: ')
 
 def calc1(a, b):
     return a + b
-def calc2(c):
+def calc2(a, b):
     return a - b
-def calc3(c):
+def calc3(a, b):
     return a * b
-def calc4(c):
+def calc4(a, b):
     return a / b
 
 if c == '+':
