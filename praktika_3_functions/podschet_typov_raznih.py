@@ -13,24 +13,24 @@ def raz(n):
         for i in n:
             a = len(i)
             kortezh += a
-        return f'длина слов равна {kortezh}'
+        return f'длина слов {kortezh}'
     elif type(n) is list:
         for i in n:
             if type(i) is str:
                 stroka += len(i)
             elif type(i) is int:
                 chislo += 1
-        return f'букв {spisok}, цифр{chislo}'
+        return f'букв {stroka}, чисел {chislo}'
     elif type(n) is int:
-        for i in n(str):
-            n = int
+        for i in str(n):
+            i = int(i)
             if i % 2 != 0:
                 chislo += 1
-        return f'нечетных цифр{chislo}'
+        return f'нечетных цифр {chislo}'
     elif type(n) is str:
         return f'букв в строке {len(n)}'
 
-print(raz(('Chuck Norris', 'Van Damm')))
+print(raz(('Chuck Norris', 'Van Damme')))
 print(raz([800, 'bazuka', 100500, 'boroda']))
-print(raz(50))
-print(raz('Shcwartznegger'))
+print(raz(1534530))
+print(raz('Schwarzenegger'))
