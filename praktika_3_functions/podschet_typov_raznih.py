@@ -16,18 +16,21 @@ def raz(n):
         return f'длина слов равна {kortezh}'
     elif type(n) is list:
         for i in n:
-            b = count(i)
-            spisok += b
-        return f'количество символов равно {spisok}'
+            if type(i) is str:
+                stroka += len(i)
+            elif type(i) is int:
+                chislo += 1
+        return f'букв {spisok}, цифр{chislo}'
     elif type(n) is int:
-        for i in n:
-            if i // 2 == 0:
-                return f'количество нечетных цифр равно {chislo}'
-            else:
-                continue
+        for i in n(str):
+            n = int
+            if i % 2 != 0:
+                chislo += 1
+        return f'нечетных цифр{chislo}'
     elif type(n) is str:
-        for i in n:
-            c = count(i)
-            stroka += c
-        return f'количество букв в строке равно {stroka}'
-print(input())
+        return f'букв в строке {len(n)}'
+
+print(raz(('Chuck Norris', 'Van Damm')))
+print(raz([800, 'bazuka', 100500, 'boroda']))
+print(raz(50))
+print(raz('Shcwartznegger'))
