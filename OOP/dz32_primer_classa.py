@@ -1,3 +1,5 @@
+# Напишите пример любого класса и создайте его объект
+
 class Terminator:
     def print(self):
         print('bazuka')
