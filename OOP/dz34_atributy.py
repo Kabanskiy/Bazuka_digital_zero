@@ -6,7 +6,7 @@ class Terminator:
     def dict(self):
         print('Arni')
     def str(self):
-        print('bazuka')
+        print('жидкий терминатор')
 
 print(dir(Terminator))
 t800 = Terminator
