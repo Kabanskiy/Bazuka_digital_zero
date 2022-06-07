@@ -40,3 +40,9 @@ class Boroda:
 
                 def second(self, a):
                     return len(str(a))
+ex = Boroda
+vvod = input('Введите буквенные или цифровые значения: ')
+if vvod.isalpha():
+    ex.furst(vvod)
+elif vvod.isdigit():
+    ex.second(int(vvod))
