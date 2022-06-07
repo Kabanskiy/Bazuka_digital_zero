@@ -14,7 +14,7 @@ class Boroda:
         self.s = 0
         self.num = 0
 
-        def furst(self, a):
+        def first(self, a):
             if type(a) is str:
                 for i in a:
                     if i in 'eyuioaёуеыаоэяию':
@@ -27,7 +27,7 @@ class Boroda:
                 print('Согласных:', self.s)
                 print('Длина слова:', self.second(a))
 
-                if (self.g * self.s) <= self.func2(a):
+                if (self.g * self.s) <= self.second(a):
                     print('Все гласные:', self.g)
                 else:
                     print('Все согласные:', self.s)
@@ -41,9 +41,9 @@ class Boroda:
                 def second(self, a):
                     return len(str(a))
 
-ex = Boroda
+ex = Boroda()
 vvod = input('Введите буквенные или цифровые значения: ')
 if vvod.isalpha():
-    ex.furst(vvod)
+    ex.first(vvod)
 elif vvod.isdigit():
     ex.second(int(vvod))
