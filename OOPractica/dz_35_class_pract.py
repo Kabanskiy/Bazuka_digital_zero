@@ -5,15 +5,12 @@
 # Длину строки и числа искать во втором методе
 
 class Boroda:
-
     def __init__(self):
         self.glas = []
         self.sogl = []
-
         self.g = 0
         self.s = 0
         self.num = 0
-
     def first(self, a):
         if type(a) is str:
             for i in a:
@@ -39,7 +36,6 @@ class Boroda:
 
     def second(self, a):
         return len(str(a))
-
 
 ex = Boroda()
 vvod = input('Введите буквенные или цифровые значения: ')
