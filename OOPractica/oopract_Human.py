@@ -49,7 +49,7 @@ class SmallHouse(House):
     default_area = 40
 
     def __init__(self, price):
-        super.__init__(SmallHouse.default_area, price)  # к дефолтному значению обращаемся через имя класса
+        super().__init__(SmallHouse.default_area, price)  # к дефолтному значению обращаемся через имя класса
 
 
 # тесты
@@ -61,7 +61,7 @@ if __name__ == '__main__':  # значит дальше идут тесты
     Vasya.buy_house(hata, 10)  # покупка, название дома и скидка
     Vasya.earn_money(8000)
     Vasya.earn_money(7000)
-    # Vasya.buy_house(hata, 10)
+    Vasya.buy_house(hata, 10)
     Vasya.info()
 
     # можно импортировать код в другую вкладку и будет работать с новыми вводными данными в oopract_Human2
