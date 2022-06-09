@@ -23,13 +23,23 @@ class Human:
         self.__money += amount
         print(f'Заработано: {amount}. У вас {self.__money} денег')
 
+
 class House:
     def __init__(self, area, price):
         self._area = area
         self._price = price
+
     def final_price(self, discount):
-        final_price = self._price * (100 - discount)/100
+        final_price = self._price * (100 - discount) / 100
         return final_price
+
+
+class SmallHouse(House):
+    default_area = 40
+
+    def __init__(self, price):
+        super.__init__(SmallHouse.default_area, price)  # к дефолтному значению обращаемся через имя класса
+
 
 # тесты
 if __name__ == '__main__':  # значит дальше идут тесты
@@ -41,4 +51,3 @@ if __name__ == '__main__':  # значит дальше идут тесты
     Vasya.info()
 
     # можно импортировать код в другую вкладку и будет работать с новыми вводными данными в oopract_Human2
-
