@@ -23,6 +23,16 @@ class Human:
         self.__money += amount
         print(f'Заработано: {amount}. У вас {self.__money} денег')
 
+    def __make_deal(self, house, price):
+        self.__money -= price
+        self.__house = house
+
+    def buy_house(self, house, discount):
+        price = house.final_price(discount)
+        if price>self.__money:
+            print('Недостаточно денег')
+        else:
+            self.__make_deal(house, price)
 
 class House:
     def __init__(self, area, price):
@@ -46,8 +56,11 @@ if __name__ == '__main__':  # значит дальше идут тесты
     Human.default_info()  # т.к. это статический метод, вызываем его через имя класса
     Vasya = Human('Василий', 31)
     Vasya.info()
+    hata = SmallHouse(10000) # название дома, который надо купить
+    Vasya.buy_house(hata, 10) # название дома и скидка
     Vasya.earn_money(8000)
     Vasya.earn_money(7000)
+    Vasya.buy_house(hata, 10)
     Vasya.info()
 
     # можно импортировать код в другую вкладку и будет работать с новыми вводными данными в oopract_Human2
