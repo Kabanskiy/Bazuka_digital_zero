@@ -24,4 +24,13 @@ class Human:
         print(f'Заработано: {amount}. У вас {self.__money} денег')
 
 # тесты
-if __name__=='__main__': # значит дальше идут тесты
+if __name__ == '__main__':  # значит дальше идут тесты
+    Human.default_info()  # т.к. это статический метод, вызываем его через имя класса
+    Vasya = Human('Василий', 31)
+    Vasya.info()
+    Vasya.earn_money(8000)
+    Vasya.earn_money(7000)
+    Vasya.info()
+
+    # можно импортировать код в другую вкладку и будет работать с новыми вводными данными в oopract_Human2
+
