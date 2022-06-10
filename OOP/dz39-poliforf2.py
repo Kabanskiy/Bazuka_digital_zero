@@ -6,5 +6,5 @@ class Rectangle:
             print('Получился квадрат', a)
 
 
-rectangle_a = Rectangle()
-rectangle_a.area(10, 5)
+figura = Rectangle()
+figura.area(10, 5)
