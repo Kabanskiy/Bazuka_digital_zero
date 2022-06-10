@@ -5,7 +5,7 @@ class AK_74M:
         print("AK-74M стреляет автоматически")
 
     def single(self):
-        print("AK_74M не стреляет одиночными")  # на самом деле стреляет)
+        print("AK_74M не стреляет одиночными")  # на самом деле стреляет))
 
 class Desert_eagle:
     def automatical(self):
