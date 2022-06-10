@@ -7,4 +7,4 @@ class Rectangle:
 
 
 rectangle_a = Rectangle()
-rectangle_a.area(10)
+rectangle_a.area(10, 5)
