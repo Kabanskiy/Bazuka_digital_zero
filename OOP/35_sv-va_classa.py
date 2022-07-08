@@ -44,3 +44,27 @@ c1 = Class1(5)
 c1.v = 35  # Вызывается метод setVar()
 print(c1.v)  # Вызывается метод getVar()
 del c1.v  # Вызывается метод delVar()
+
+
+# Методы getter(), setter() и deleter()
+
+class Burzhuaziya(object): # Работает, начиная с версии Python 2.6
+
+    def __init__(self, value):
+        self.__var = value
+
+    @property
+    def v(self): # Чтение
+        return self.__var
+    @v.setter
+    def v(self, value): # Запись
+        self.__var = value
+    @v.deleter
+    def v(self): # Удаление
+        del self.__var
+
+c1 = Burzhuaziya(5)
+
+c1.v = 35 # Запись
+print(c1.v) # Чтение
+del c1.v # Удаление
