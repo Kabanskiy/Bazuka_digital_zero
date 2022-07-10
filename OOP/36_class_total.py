@@ -1,5 +1,5 @@
 class MyClass():
-    TOTAL_OBJECTS = 0
+    TOTAL_OBJECTS = 0 # переменная. статическая
 
     def __init__(self):
         MyClass.TOTAL_OBJECTS = MyClass.TOTAL_OBJECTS + 1
