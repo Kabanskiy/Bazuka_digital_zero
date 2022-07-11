@@ -12,7 +12,7 @@ class Phone:
     # Если телефон включен, делаем звонок
     def call(self):
         if self.is_on:
-            print('Making call...')
+            print('Звонок...')
 
 # print(dir(Phone))
 
