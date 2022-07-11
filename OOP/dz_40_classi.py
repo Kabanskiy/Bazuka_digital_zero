@@ -1,10 +1,10 @@
-# Класс Alphabet
+#                   Класс Alphabet
 # 1. Создайте класс Alphabet
 # 2. Создайте метод __init__(), внутри которого будут определены два динамических свойства:
 # 1) lang - язык и 2) letters - список букв. Начальные значения свойств берутся из входных параметров метода.
 # 3. Создайте метод print(), который выведет в консоль буквы алфавита
 # 4. Создайте метод letters_num(), который вернет количество букв в алфавите
-#                Класс EngAlphabet
+#                    Класс EngAlphabet
 # 1. Создайте класс EngAlphabet путем наследования от класса Alphabet
 # 2. Создайте метод __init__(), внутри которого будет вызываться родительский метод __init__(). В качестве параметров ему будут
 # передаваться обозначение языка(например, 'En') и строка, состоящая из всех букв алфавита(можно воспользоваться свойством
@@ -23,18 +23,18 @@
 # 5. Проверьте, относится ли буква Щ к английскому алфавиту
 # 6. Выведите пример текста на английском языке
 
-import string
+import string # Это встроенный модуль, и мы должны импортировать его перед использованием любого из его констант и классов
 
 class Alphabet:
 
-    def __init__(self, language, list_letters):
+    def __init__(self, language, list_letters): # метод с двумя динамическими свойствами
         self.lang = language
         self.letters = list(list_letters)
 
-    def print(self):
+    def print(self):            # вывод букв алфавита
         print(self.letters)
 
-    def letters_num(self):
+    def letters_num(self):      # вывод количества букв алфавита
         return len(self.letters)
 
 class EngAlphabet(Alphabet):
@@ -42,18 +42,18 @@ class EngAlphabet(Alphabet):
     def __init__(self):
         super().__init__('En', string.ascii_uppercase)
 
-    __letters_num = 26
+    __letters_num = 26          # Хранение количества букв
 
-    def is_en_letter(self, test):
+    def is_en_letter(self, test):           # Проверка относительности букв к алфавиту
         if test.upper() in self.letters:
             return True
         else:
             return False
 
-    def letters_num(self):
+    def letters_num(self):       # Количество букв
         return EngAlphabet.__letters_num
 
-    @staticmethod
+    @staticmethod               # Статический метод, возвращает пример текста на англ языке
     def example():
         return 'Chuck Norris'
 
