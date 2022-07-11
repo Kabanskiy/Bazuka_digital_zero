@@ -14,12 +14,14 @@ class Phone:
         if self.is_on:
             print('Making call...')
 
+# print(dir(Phone))
+
 # Унаследованный класс
 class MobilePhone(Phone):
 
     # Добавляем новое свойство battery
     def __init__(self):
-        super().__init__()
+        super().__init__() # super init наследует свойства родительского класса (self.is-on). Пишется обязательно, если в классе есть инициализатор
         self.battery = 0
 
 # Заряжаем телефон на величину переданного значения
