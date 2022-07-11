@@ -35,7 +35,22 @@ class Alphabet:
     def letters_num(self):
         return len(self.letters)
 
-# class EngAlphabet(Alphabet):
-#
-#     def __init__(self):
-#         super().__init__(En, st)
+class EngAlphabet(Alphabet):
+
+    def __init__(self):
+        super().__init__('En', string.ascii_uppercase)
+
+    __letters_num = 26
+
+    def is_en_letter(self, test):
+        if test.upper() in self.letters:
+            return True
+        else:
+            return False
+
+    def letters_num(self):
+        return EngAlphabet.__letters_num
+
+    @staticmethod
+    def example():
+        return 'Chuck Norris'
