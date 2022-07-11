@@ -23,6 +23,8 @@
 # 5. Проверьте, относится ли буква Щ к английскому алфавиту
 # 6. Выведите пример текста на английском языке
 
+import string
+
 class Alphabet:
 
     def __init__(self, language, list_letters):
@@ -54,3 +56,11 @@ class EngAlphabet(Alphabet):
     @staticmethod
     def example():
         return 'Chuck Norris'
+
+if __name__ == '__main__':
+    eng_alphabet = EngAlphabet()              # Создание объекта класса EngAlphabet
+    print(eng_alphabet.letters)             # Печать букв алфавита для этого объекта
+    print(eng_alphabet.letters_num())       # Вывод количества букв в алфавите
+    print(eng_alphabet.is_en_letter('F'))   # Проверка, относится ли буква F к английскому алфавиту
+    print(eng_alphabet.is_en_letter('Щ'))   # Проверка, относится ли буква Щ к английскому алфавиту
+    EngAlphabet.example()                   # Вывод примера текста на английском языке
