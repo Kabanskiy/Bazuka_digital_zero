@@ -31,10 +31,10 @@ class Alphabet:
         self.lang = language
         self.letters = list(list_letters)
 
-    def print(self):            # вывод букв алфавита
+    def print(self):                            # вывод букв алфавита
         print(self.letters)
 
-    def letters_num(self):      # вывод количества букв алфавита
+    def letters_num(self):                      # вывод количества букв алфавита
         return len(self.letters)
 
 class EngAlphabet(Alphabet):
@@ -42,25 +42,25 @@ class EngAlphabet(Alphabet):
     def __init__(self):
         super().__init__('En', string.ascii_uppercase)
 
-    __letters_num = 26          # Хранение количества букв
+    __letters_num = 26                          # Хранение количества букв
 
-    def is_en_letter(self, test):           # Проверка относительности букв к алфавиту
+    def is_en_letter(self, test):               # Проверка относительности букв к алфавиту
         if test.upper() in self.letters:
             return True
         else:
             return False
 
-    def letters_num(self):       # Количество букв
+    def letters_num(self):                      # Количество букв
         return EngAlphabet.__letters_num
 
-    @staticmethod               # Статический метод, возвращает пример текста на англ языке
+    @staticmethod                               # Статический метод, возвращает пример текста на англ языке
     def example():
         return 'Chuck Norris'
 
 if __name__ == '__main__':
-    eng_alphabet = EngAlphabet()              # Создание объекта класса EngAlphabet
-    print(eng_alphabet.letters)             # Печать букв алфавита для этого объекта
-    print(eng_alphabet.letters_num())       # Вывод количества букв в алфавите
-    print(eng_alphabet.is_en_letter('F'))   # Проверка, относится ли буква F к английскому алфавиту
-    print(eng_alphabet.is_en_letter('Щ'))   # Проверка, относится ли буква Щ к английскому алфавиту
-    EngAlphabet.example()                   # Вывод примера текста на английском языке
+    eng_alphabet = EngAlphabet()                # Создание объекта класса EngAlphabet
+    print(eng_alphabet.letters)                 # Печать букв алфавита для этого объекта
+    print(eng_alphabet.letters_num())           # Вывод количества букв в алфавите
+    print(eng_alphabet.is_en_letter('F'))       # Проверка, относится ли буква F к английскому алфавиту
+    print(eng_alphabet.is_en_letter('Щ'))       # Проверка, относится ли буква Щ к английскому алфавиту
+    EngAlphabet.example()                       # Вывод примера текста на английском языке
