@@ -1,11 +1,10 @@
 # создаем класс Car
 class Car:
-    def start(self, a, b=None):
+    def start(self, a, b=None): # а будет передаваться всегда. b - может передаться либо нет
         if b is not None:
-            print(a + b)
+            print(a + b)        # если  b что-то ередавно принтуем это
         else:
-            print(a)
-
-
+            print(a)            # если нет, то принтуем просто а
+# Это для тех случаев, когда у метода два варианта поведения
 car_a = Car()
 car_a.start(10,15)
