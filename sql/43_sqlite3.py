@@ -22,3 +22,7 @@ conn.commit()
 cursor.execute('''SELECT*FROM tab_1''') # * - говорит о том, что мы хотим достать все. Если бы стоял col1, то доставали бы col1
 k = cursor.fetchall()
 print(k)
+
+# удаление записи из таблицы
+# cursor.execute('''DELETE FROM tab_1 WHERE id = 1''')
+# conn.commit()
