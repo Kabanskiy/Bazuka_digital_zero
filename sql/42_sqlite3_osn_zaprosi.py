@@ -32,3 +32,11 @@ print(k)
 # cursor.execute('''SELECT*FROM tab_1''')
 # k=cursor.fetchall()
 # print(k)
+
+# Обновление данных в таблице
+t = 22
+cursor.execute('''UPDATE tab_1 SET col_1='world' WHERE id=?''', (t,))
+conn.commit()
+cursor.execute('''SELECT*FROM tab_1''')
+k=cursor.fetchall()
+print(k)
