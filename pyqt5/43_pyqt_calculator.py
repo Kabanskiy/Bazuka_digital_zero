@@ -1,4 +1,5 @@
 # графический интерфейс для калькулятора
+# ДЗ. Добавьте кнопки %, // и возведение в квадрат.
 from PyQt5.QtWidgets import QWidget, QApplication, QLabel, QPushButton  # QtWidget - для построения графического окошка,
 # QLabel - размеры окна, QPushButton - виджит, отвечающий за нажатие кнопки
 import sys
@@ -13,7 +14,7 @@ class Calculator(QWidget):  # импортировали и унаследова
         self.operand_2 = []
 
     def initUI(self):  # это место, где будет происходить построение картинки, нашей GUI
-        self.setGeometry(350, 350, 250, 400)  # задаем параметры окна
+        self.setGeometry(350, 350, 280, 400)  # задаем параметры окна
         self.setWindowTitle('Кулькулятор')  # задаем название
 
         # поле, которе отвечает за вывод результатов
@@ -104,6 +105,16 @@ class Calculator(QWidget):  # импортировали и унаследова
         self.zapyat.resize(50, 50)
         self.zapyat.move(170, 320)
 
+        self.xvkv = QPushButton('x²', self)
+        self.xvkv.resize(50, 50)
+        self.xvkv.move(225, 320)
+
+        self.c_ch_d = QPushButton('//', self)
+        self.c_ch_d.resize(50, 50)
+        self.c_ch_d.move(225, 265)
+        self.c_ch_d.clicked.connect(self.c_ch_d_1)
+
+
         self.num_1.clicked.connect(self.one)
         self.num_2.clicked.connect(self.two)
         self.num_3.clicked.connect(self.three)
@@ -123,6 +134,9 @@ class Calculator(QWidget):  # импортировали и унаследова
         self.prots.clicked.connect(self.prots_1)
         self.ravno.clicked.connect(self.ravno_1)
         self.ce.clicked.connect(self.ce_1)
+        self.xvkv.clicked.connect(self.xvkv_1)
+        self.c_ch_d.clicked.connect(self.c_ch_d_1)
+
 
     def enterValue(self):  # функция, отвечающая за ввод
         if self.label.text() == '0':
@@ -177,9 +191,8 @@ class Calculator(QWidget):  # импортировали и унаследова
 
     def plus_1(self):  # 1 чтобы не было конфликта
         self.operation = '+'
-        self.operand_1 = float(
-            self.label.text())  # записали все, что было в label и привели все к типу float, чтобы считать
-        self.label.setText('')
+        self.operand_1 = float(self.label.text())
+        self.label.setText('')      # записали все, что было в label и привели все к типу float, чтобы считать
 
     def minus_1(self):
         self.operation = '-'
@@ -211,6 +224,16 @@ class Calculator(QWidget):  # импортировали и унаследова
         self.operand_1 = float(self.label.text())
         self.label.setText('')
 
+    def xvkv_1(self):
+        self.operation = 'x²'
+        self.operand_1 = float(self.label.text())
+        self.label.setText('')
+
+    def c_ch_d_1(self):
+        self.operation = '//'
+        self.operand_1 = float(self.label.text())
+        self.label.setText('')
+
     def ravno_1(self):
         self.operand_2 = float(self.label.text())  # забирает весь текст, который записан в нашем label
         if self.operation == '+':
@@ -221,7 +244,7 @@ class Calculator(QWidget):  # импортировали и унаследова
             self.rezult = self.operand_1 * self.operand_2
         if self.operation == '/':
             if self.operand_2 == '0':
-                self.rezult == 'Error'
+                self.rezult = 'Error'
             else:
                 self.rezult = self.operand_1 / self.operand_2
         if self.operation == '^':
@@ -229,7 +252,17 @@ class Calculator(QWidget):  # импортировали и унаследова
         if self.operation == '√':
             self.rezult = self.operand_1 ** (1 / self.operand_2)
         if self.operation == '%':
-            self.rezult = self.operand_1 % self.operand_2  # надо пофиксить
+            if self.operand_2 == '0':
+                self.rezult = 'Error'
+            else:
+                self.rezult = self.operand_1 % self.operand_2                 # надо пофиксить
+        if self.operation == 'x²':                                           # надо пофиксить
+            self.rezult = self.operand_1 ** 2
+        if self.operation == '//':                                          # надо пофиксить
+            if self.operand_2 == '0':
+                self.rezult = 'Error'
+            else:
+                self.rezult = self.operand_1 // self.operand_2
         self.label.setText(str(self.rezult))  # обязательно указываем str
 
     def ce_1(self):
