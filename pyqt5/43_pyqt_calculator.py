@@ -1,25 +1,26 @@
 # графический интерфейс для калькулятора
-from PyQt5.QtWidgets import QWidget, QApplication, QLabel, QPushButton # QtWidget - для построения графического окошка,
+from PyQt5.QtWidgets import QWidget, QApplication, QLabel, QPushButton  # QtWidget - для построения графического окошка,
 # QLabel - размеры окна, QPushButton - виджит, отвечающий за нажатие кнопки
 import sys
 
 
-class Calculator(QWidget): # импортировали и унаследовали  QtWidget  в наш инициализатор
+class Calculator(QWidget):  # импортировали и унаследовали  QtWidget  в наш инициализатор
     def __init__(self):
         super().__init__()
-        self.initUI() # initUI метод, которому делегируется создание GUI
+        self.initUI()  # initUI метод, которому делегируется создание GUI
+        self.my_input = []  # создаем пустой массив
+        self.operand_1 = []
+        self.operand_2 = []
 
-
-
-    def initUI(self): # это место, где будет происходить построение картинки, нашей GUI
-        self.setGeometry(350, 350, 250, 400) # задаем параметры окна
-        self.setWindowTitle('Кулькулятор') # задаем название
+    def initUI(self):  # это место, где будет происходить построение картинки, нашей GUI
+        self.setGeometry(350, 350, 250, 400)  # задаем параметры окна
+        self.setWindowTitle('Кулькулятор')  # задаем название
 
         # поле, которе отвечает за вывод результатов
         self.label = QLabel(self)
-        self.label.setText('0')         # изначально будет висеть 0
-        self.label.resize(150, 100)     # задаем размеры окна
-        self.move(0,0)
+        self.label.setText('0')  # изначально будет висеть 0
+        self.label.resize(150, 100)  # задаем размеры окна
+        self.move(0, 0)
 
         # кнопки
         self.num_1 = QPushButton('1', self)
@@ -103,9 +104,141 @@ class Calculator(QWidget): # импортировали и унаследова�
         self.zapyat.resize(50, 50)
         self.zapyat.move(170, 320)
 
+        self.num_1.clicked.connect(self.one)
+        self.num_2.clicked.connect(self.two)
+        self.num_3.clicked.connect(self.three)
+        self.num_4.clicked.connect(self.four)
+        self.num_5.clicked.connect(self.five)
+        self.num_6.clicked.connect(self.six)
+        self.num_7.clicked.connect(self.seven)
+        self.num_8.clicked.connect(self.eight)
+        self.num_9.clicked.connect(self.nine)
+        self.num_0.clicked.connect(self.zero)
+        self.zapyat.clicked.connect(self.zapyat_1)
+        self.plus.clicked.connect(self.plus_1)
+        self.minus.clicked.connect(self.minus_1)
+        self.umnozh.clicked.connect(self.umnozh_1)
+        self.stepen.clicked.connect(self.stepen_1)
+        self.coren.clicked.connect(self.coren_1)
+        self.prots.clicked.connect(self.prots_1)
+        self.ravno.clicked.connect(self.ravno_1)
+        self.ce.clicked.connect(self.ce_1)
+
+    def enterValue(self):  # функция, отвечающая за ввод
+        if self.label.text() == '0':
+            self.label.setText('')  # эта функция добавляет текст в наш лейбл
+        self.label.setText(self.label.text() + self.my_input)  # если не ноль, оно выводится и остается
+
+    def one(self):
+        self.my_input = '1'
+        self.enterValue()  # здесь enterValue вызывается, смотрит выше на label.text()=='0':, если не 0, то остается
+
+    def two(self):
+        self.my_input = '2'
+        self.enterValue()
+
+    def three(self):
+        self.my_input = '3'
+        self.enterValue()
+
+    def four(self):
+        self.my_input = '4'
+        self.enterValue()
+
+    def five(self):
+        self.my_input = '5'
+        self.enterValue()
+
+    def six(self):
+        self.my_input = '6'
+        self.enterValue()
+
+    def seven(self):
+        self.my_input = '7'
+        self.enterValue()
+
+    def eight(self):
+        self.my_input = '8'
+        self.enterValue()
+
+    def nine(self):
+        self.my_input = '9'
+        self.enterValue()
+
+    def zero(self):
+        self.my_input = '0'
+        self.enterValue()
+
+    def zapyat_1(self):
+        self.my_input = ','
+        self.enterValue()
+
+    # знаки
+
+    def plus_1(self):  # 1 чтобы не было конфликта
+        self.operation = '+'
+        self.operand_1 = float(
+            self.label.text())  # записали все, что было в label и привели все к типу float, чтобы считать
+        self.label.setText('')
+
+    def minus_1(self):
+        self.operation = '-'
+        self.operand_1 = float(self.label.text())
+        self.label.setText('')
+
+    def umnozh_1(self):
+        self.operation = '*'
+        self.operand_1 = float(self.label.text())
+        self.label.setText('')
+
+    def delen_1(self):
+        self.operation = '/'
+        self.operand_1 = float(self.label.text())
+        self.label.setText('')
+
+    def stepen_1(self):
+        self.operation = '^'
+        self.operand_1 = float(self.label.text())
+        self.label.setText('')
+
+    def coren_1(self):
+        self.operation = '√'
+        self.operand_1 = float(self.label.text())
+        self.label.setText('')
+
+    def prots_1(self):
+        self.operation = '%'
+        self.operand_1 = float(self.label.text())
+        self.label.setText('')
+
+    def ravno_1(self):
+        self.operand_2 = float(self.label.text())  # забирает весь текст, который записан в нашем label
+        if self.operation == '+':
+            self.rezult = self.operand_1 + self.operand_2
+        if self.operation == '-':
+            self.rezult = self.operand_1 - self.operand_2
+        if self.operation == '*':
+            self.rezult = self.operand_1 * self.operand_2
+        if self.operation == '/':
+            if self.operand_2 == '0':
+                self.rezult == 'Error'
+            else:
+                self.rezult = self.operand_1 / self.operand_2
+        if self.operation == '^':
+            self.rezult = self.operand_1 ** self.operand_2
+        if self.operation == '√':
+            self.rezult = self.operand_1 ** (1 / self.operand_2)
+        if self.operation == '%':
+            self.rezult = self.operand_1 % self.operand_2  # надо пофиксить
+        self.label.setText(str(self.rezult))  # обязательно указываем str
+
+    def ce_1(self):
+        self.label.setText('')
+
+
 # Для того, чтобы тестировать все, что создаем:
-if __name__=='__main__':
-    app = QApplication(sys.argv) # создали экз-р класса QAppl-n, и передаем sys.argv - аргументы командной строки
-    ex = Calculator()            # создали объект нашего класса
-    ex.show()                    # показали объект нашего класса
-    sys.exit(app.exec())         # этим мы завершаем наше приложение. И если возникнут ошибки, мы получим сообщение
+if __name__ == '__main__':
+    app = QApplication(sys.argv)  # создали экз-р класса QAppl-n, и передаем sys.argv - аргументы командной строки
+    ex = Calculator()  # создали объект нашего класса
+    ex.show()  # показали объект нашего класса
+    sys.exit(app.exec())  # этим мы завершаем наше приложение. И если возникнут ошибки, мы получим сообщение
